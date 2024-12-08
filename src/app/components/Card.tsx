@@ -1,8 +1,10 @@
-interface ICardProps{
-    img:string
-}
+import { StaticImageData } from 'next/image';
 import React from 'react'
 import Image from "next/image";
+interface ICardProps{
+    img:StaticImageData
+}
+
 const Card = (props:ICardProps) => {
     const {img}= props;
   return (
