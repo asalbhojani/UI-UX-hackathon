@@ -1,11 +1,12 @@
-interface ICardProps{
-    img:string
-}
+import { StaticImageData } from 'next/image';
 import React from 'react'
 import Image from "next/image";
 import clock from '../assets/time.png';
 import graph from '../assets/graph.png';
 import arrow from '../assets/arrow.png';
+interface ICardProps{
+    img:StaticImageData
+}
 
 const Featured = (props:ICardProps) => {
     const {img}= props;
