@@ -3,7 +3,6 @@ interface ICardProps{
 }
 import React from 'react'
 import Image from "next/image";
-import boy from '../assets/boy.svg';
 const Card = (props:ICardProps) => {
     const {img}= props;
   return (
