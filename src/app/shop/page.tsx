@@ -38,7 +38,7 @@ const page = () => {
     <span className='text-[#BDBDBD] px-2'>Shop</span>
       </div>
       </div>
-      <div className="shopCards flex justify-between mt-4 ml-4">
+      <div className="shopCards flex flex-col md:flex-row space-y-6 md:space-y-0 mb-20 md:mb-0 justify-center items-center md:justify-between mt-4 ml-4">
       <Image
       className=""
       aria-hidden
@@ -71,7 +71,7 @@ const page = () => {
     />
     
       </div>
-      <div className="shopCards flex justify-between mt-20 ml-4">
+      <div className="shopCards md:flex hidden justify-between mt-20 ml-4">
         <Image
           className=""
           aria-hidden
