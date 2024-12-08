@@ -26,10 +26,10 @@ const Featured = (props:ICardProps) => {
             <h5 className="mb-2 text-sm font-medium tracking-tight text-[#737373]">New</h5>
         </div>
         
-        <p className="mb-3 text-logo font-medium text-2xl">Loudest à la Madison #1 
+        <p className="mb-3 text-logo font-medium text-2xl">Loudest à la Madison 1 
         (L'integral)</p>
         <p className="mb-3 text-[#737373] font-normal text-md">We focus on ergonomics and meeting 
-you where you work. It's only a 
+you where you work. Its only a 
 keystroke away.</p>
 <div className="flex justify-between space-x-3 my-2">
   <div className="flex items-center">
