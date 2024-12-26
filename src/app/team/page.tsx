@@ -1,4 +1,4 @@
-import TeamMemberCards from "../components/TeamMemberCards";
+import TeamMemberCards from "@/components/TeamMemberCards";
 import Image from "next/image";
 import { Metadata } from 'next';
 
@@ -86,5 +86,3 @@ export default function page() {
         </div>
     )
 }
-
-// teams page updated

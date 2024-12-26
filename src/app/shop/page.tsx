@@ -1,126 +1,168 @@
+import Image from 'next/image'
 import React from 'react'
-import Image from "next/image";
-import shop1 from "../assets/shop/shop1.png";
-import shop2 from "../assets/shop/shop2.png";
-import shop3 from "../assets/shop/shop3.png";
-import shop4 from "../assets/shop/shop4.png";
-import shop5 from "../assets/shop/shop5.png";
-import shop6 from "../assets/shop/shop6.png";
-import shopLogo1 from "../assets/shop/shopLogo1.png";
-import shopLogo2 from "../assets/shop/shopLogo2.png";
-import shopLogo3 from "../assets/shop/shopLogo3.png";
-import shopLogo4 from "../assets/shop/shopLogo4.png";
-import shopLogo5 from "../assets/shop/shopLogo5.png";
-import shopLogo6 from "../assets/shop/shopLogo6.png";
-import Card from "../components/Card";
-import bs1 from '../assets/bestSeller/1.png';
-import bs2 from '../assets/bestSeller/2.png';
-import bs3 from '../assets/bestSeller/3.png';
-import bs4 from '../assets/bestSeller/4.png';
-import bs5 from '../assets/bestSeller/5.png';
-import bs6 from '../assets/bestSeller/6.png';
-import bs7 from '../assets/bestSeller/7.png';
-import bs8 from '../assets/bestSeller/8.png';
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "@/components/ui/accordion"
+import { Metadata } from 'next';
 
-const page = () => {
-  return (
-    <div className=' max-w-screen-xl mx-auto mt-10'>
-      <div className="flex justify-between">
-      <h1 className='text-2xl text-logo font-semibold px-4'>Shop</h1>
-      <div className="flex items-center">
-       <span className='text-logo px-2'>Home</span>
-        <Image
-      className="w-4 h-4"
-      aria-hidden
-      src={shop6}
-      alt="banner"
-    />
-    <span className='text-[#BDBDBD] px-2'>Shop</span>
-      </div>
-      </div>
-      <div className="shopCards flex flex-col md:flex-row space-y-6 md:space-y-0 mb-20 md:mb-0 justify-center items-center md:justify-between mt-4 ml-4">
-      <Image
-      className=""
-      aria-hidden
-      src={shop1}
-      alt="banner"
-    />
-      <Image
-      className=""
-      aria-hidden
-      src={shop2}
-      alt="banner"
-    />
-      <Image
-      className=""
-      aria-hidden
-      src={shop3}
-      alt="banner"
-    />
-      <Image
-      className=""
-      aria-hidden
-      src={shop4}
-      alt="banner"
-    />
-      <Image
-      className=""
-      aria-hidden
-      src={shop5}
-      alt="banner"
-    />
-    
-      </div>
-      <div className="shopCards md:flex hidden justify-between mt-20 ml-4">
-        <Image
-          className=""
-          aria-hidden
-          src={shopLogo1}
-          alt="banner"
-        />
-        <Image
-          className=""
-          aria-hidden
-          src={shopLogo2}
-          alt="banner"
-        />
-        <Image
-          className=""
-          aria-hidden
-          src={shopLogo3}
-          alt="banner"
-        />
-        <Image
-          className=""
-          aria-hidden
-          src={shopLogo4}
-          alt="banner"
-        />
-        <Image
-          className=""
-          aria-hidden
-          src={shopLogo5}
-          alt="banner"
-        />
-        <Image
-          className=""
-          aria-hidden
-          src={shopLogo6}
-          alt="banner"
-        />
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:mx-40 space-y-8 md:space-y-0">
-  <Card img={bs1} />
-  <Card img={bs2} />
-  <Card img={bs3} />
-  <Card img={bs4} />
-  <Card img={bs5} />
-  <Card img={bs6} />
-  <Card img={bs7} />
-  <Card img={bs8} />
-    </div>
-    </div>
-  )
+
+export const metadata: Metadata = {
+  title: "Hackathon Ui - Shop",
+ 
+};
+
+
+export default function page() {
+    return (
+        <>
+
+            <div className='w-screen flex flex-col justify-center items-center'>
+
+                {/* page name and Route */}
+                <div className='mt-10 mb-10 w-full flex justify-center items-center'>
+                    <div className='w-[80%] flex justify-between  items-center'>
+                        <h1 className='font-montserrat text-2xl text-black font-bold'>Shop</h1>
+
+                        <div className='text-[#bdbdbd] font-montserrat font-bold flex justify-center items-center gap-1'>
+                            <p className='text-black'>Home</p>
+                            &gt;
+                            <p className=''>Shop</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                {/* Categories */}
+                <div className='flex gap-[15px] justify-center items-center flex-wrap'>
+                    {/*category container  */}
+                    <div className='relative w-[205px] h-[223px] flex justify-center items-center '>
+                        <Image src={"/images/shopCategories/mediabg-cover.png"} alt='image' height={100} width={100} className='w-full h-full' />
+
+                        {/* content */}
+                        <div className='absolute  flex flex-col justify-center items-center text-white font-montserrat '>
+                            <h2 className='text-base font-bold'> CLOTHS</h2>
+                            <p className='text-sm '>5 Items</p>
+                        </div>
+
+                    </div>
+
+                    {/*category container  */}
+                    <div className='relative w-[205px] h-[223px] flex justify-center items-center '>
+                        <Image src={"/images/shopCategories/mediabg-cover1.png"} alt='image' height={100} width={100} className='w-full h-full' />
+
+                        {/* content */}
+                        <div className='absolute  flex flex-col justify-center items-center text-white font-montserrat '>
+                            <h2 className='text-base font-bold'> CLOTHS</h2>
+                            <p className='text-sm '>5 Items</p>
+                        </div>
+
+                    </div>
+
+                    {/*category container  */}
+                    <div className='relative w-[205px] h-[223px] flex justify-center items-center '>
+                        <Image src={"/images/shopCategories/mediabg-cover2.png"} alt='image' height={100} width={100} className='w-full h-full' />
+
+                        {/* content */}
+                        <div className='absolute  flex flex-col justify-center items-center text-white font-montserrat '>
+                            <h2 className='text-base font-bold'> CLOTHS</h2>
+                            <p className='text-sm '>5 Items</p>
+                        </div>
+
+                    </div>
+
+
+                    {/*category container  */}
+                    <div className='relative w-[205px] h-[223px] flex justify-center items-center '>
+                        <Image src={"/images/shopCategories/mediabg-cover3.png"} alt='image' height={100} width={100} className='w-full h-full' />
+
+                        {/* content */}
+                        <div className='absolute  flex flex-col justify-center items-center text-white font-montserrat '>
+                            <h2 className='text-base font-bold'> CLOTHS</h2>
+                            <p className='text-sm '>5 Items</p>
+                        </div>
+
+                    </div>
+
+                    {/*category container  */}
+                    <div className='relative w-[205px] h-[223px] flex justify-center items-center '>
+                        <Image src={"/images/shopCategories/mediabg-cover4.png"} alt='image' height={100} width={100} className='w-full h-full' />
+
+                        {/* content */}
+                        <div className='absolute  flex flex-col justify-center items-center text-white font-montserrat '>
+                            <h2 className='text-base font-bold'> CLOTHS</h2>
+                            <p className='text-sm '>5 Items</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                {/* results and filters */}
+                <div className=' mt-16 w-full flex flex-wrap justify-around items-center'>
+
+                    {/* results */}
+                    <p className='mb-3'>Showing all 12 results</p>
+
+                    {/* view */}
+                    <div className='mb-3 font-montserrat w-[177px] flex justify-center items-center gap-3'>
+                        <p>views:</p>
+                        <div className='w-[46px] h-[46px] flex justify-center items-center border rounded-md'>
+                            <Image src={"/images/grid.png"} alt='image' height={15} width={15} />
+                        </div>
+
+                        <div className='rounded-md w-[46px] h-[46px] flex justify-center items-center border'>
+                            <Image src={"/images/horizontal.png"} alt='image' height={15} width={15} />
+                        </div>
+
+                    </div>
+
+
+                    {/* Popularity and filter */}
+                    <div className='mb-3 flex justify-center items-center w-[252px] h-[50px]'>
+
+                        {/* popularity */}
+                        <div className='rounded-sm bg-[#fafafa] w-[141px] h-full flex justify-center items-center'>
+                            <Accordion type="single" collapsible className='relative'>
+                                <AccordionItem value="item-1" >
+                                    <AccordionTrigger className='font-montserrat text-[#737373] text-base no-underline ' >Popularity</AccordionTrigger>
+                                    <AccordionContent className='absolute top-12 bottom-0'>
+                                        <ul className='font-montserrat font-bold flex flex-col justify-center items-start gap-1'>
+                                            <li>Old</li>
+                                            <li>Latest</li>
+                                            <li>Most Popular</li>
+
+                                        </ul>
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
+                        </div>
+
+                        {/* Filters */}
+                        <div className='w-[94px] h-full flex justify-center items-center rounded-sm font-montserrat font-bold text-white bg-[#23A6F0]'>
+                            Filter
+                        </div>
+                    </div>
+                </div>
+
+
+                {/* Brands */}
+                <div className='w-full bg-[#fafafa] h-[175px] mt-5 flex justify-evenly items-center flex-wrap'>
+                    <Image src={"/images/Brands/fa-brands-1.png"} alt={"brands"} height={80} width={80} />
+                    <Image src={"/images/Brands/fa-brands-2.png"} alt={"brands"} height={80} width={80} />
+                    <Image src={"/images/Brands/fa-brands-3.png"} alt={"brands"} height={80} width={80} />
+                    <Image src={"/images/Brands/fa-brands-4.png"} alt={"brands"} height={80} width={80} />
+                    <Image src={"/images/Brands/fa-brands-5.png"} alt={"brands"} height={80} width={80} />
+                    <Image src={"/images/Brands/fa-brands-6.png"} alt={"brands"} height={80} width={80} />
+                </div>
+
+                
+                
+            </div>
+
+        </>
+    )
 }
-
-export default page
