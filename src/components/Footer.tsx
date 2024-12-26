@@ -1,84 +1,152 @@
-import Image from 'next/image'
 import React from 'react'
+import Image from "next/image";
+import fb from '../assets/fb1.png';
+import insta from '../assets/insta1.png';
+import twitter from '../assets/twitter1.png';
 
-export default function Footer() {
-    return (
-        <div className='px-20 py-20 bg-white grid gap-10  md:gap-14 grid-cols-1 min-[580px]:grid-cols-2 grid-rows-12 text-black   md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 w-screen  overflow-x-hidden'>
+const Footer = () => {
+  return (
+    <div>
+      
 
-            {/* first */}
-            <div className='bg-[#fafafa]  col-span-1 min-[580px]:col-span-2 md:col-span-3 lg:col-span-4 xl:col-span-5 row-span-4 flex justify-between px-[10%] items-center flex-wrap'>
-                <h1 className='font-montserrat text-2xl font-bold'>Bandage</h1>
-                <div className='flex justify-center items-center gap-5'>
-                    <Image src={"/images/footer/facebook.svg"} alt='facebook' height={30} width={30} />
-                    <Image src={"/images/footer/instagram.svg"} alt='facebook' height={30} width={30} />
-                    <Image src={"/images/footer/twitter.svg"} alt='facebook' height={30} width={30} />
-                </div>
-            </div>
-
-
-
-            {/*Company Info  */}
-            <div className='col-span-1 row-span-5 flex flex-col justify-center items-start '>
-                <h2 className='mb-5 text-black text-base font-bold font-montserrat '>Company Info</h2>
-                <p className='cursor-pointer mb-3 text-[#737373] w-[176px]'>About Us</p>
-                <p className='cursor-pointer mb-3 text-[#737373]'>Carrier</p>
-                <p className='cursor-pointer mb-3 text-[#737373] '>We are hiring</p>
-                <p className='cursor-pointer mb-3 text-[#737373] '>Blog</p>
-
-            </div>
-
-
-            {/* Legal */}
-            <div className='col-span-1 row-span-5 flex flex-col justify-center items-start '>
-                <h2 className='mb-5 text-black text-base font-bold font-montserrat '>Legal</h2>
-                <p className='cursor-pointer mb-3 text-[#737373] w-[176px]'>About Us</p>
-                <p className='cursor-pointer mb-3 text-[#737373]'>Carrier</p>
-                <p className='cursor-pointer mb-3 text-[#737373] '>We are hiring</p>
-                <p className='cursor-pointer mb-3 text-[#737373] '>Blog</p>
-
-            </div>
-
-            {/* Features */}
-            <div className='col-span-1 row-span-5 flex flex-col justify-center items-start '>
-                <h2 className='mb-5 text-black text-base font-bold font-montserrat '>Features</h2>
-                <p className='cursor-pointer mb-3 text-[#737373] w-[176px]'>Business Marketing Us</p>
-                <p className='cursor-pointer mb-3 text-[#737373]'>User Analytic</p>
-                <p className='cursor-pointer mb-3 text-[#737373] '>Live Chat</p>
-                <p className='cursor-pointer mb-3 text-[#737373] '>Unlimited Support</p>
-
-            </div>
-
-            {/* Resources */}
-            <div className='col-span-1 row-span-5 flex flex-col justify-center items-start '>
-                <h2 className='mb-5 text-black text-base font-bold font-montserrat '>Resources</h2>
-                <p className='cursor-pointer mb-3 text-[#737373] w-[176px]'>IOS & Android</p>
-                <p className='cursor-pointer mb-3 text-[#737373]'>Watch a Demo</p>
-                <p className='cursor-pointer mb-3 text-[#737373] '>Customers</p>
-                <p className='cursor-pointer mb-3 text-[#737373] '>API</p>
-
-            </div>
-
-            {/* Get in touch */}
-            <div className=' col-span-1 row-span-4 flex flex-col justify-center items-start  '>
-                <h1 className='mb-5 font-montserrat font-bold text-base'>Get In Touch</h1>
-
-                {/* input and subscribe button */}
-                <div >
-                    <div className='w-[250px] h-[58px] flex justify-center items-center  border-[1px] border-white'>
-                        <input type="text" placeholder='Your Email' className='w-[70%] outline-none pl-4 bg-[#fafafa] h-full' />
-                        <button className='w-[30%] h-full bg-[#23A6F0]'>Subscribe</button>
-                    </div>
-                    <h1 className='mt-2 font-montserrat text-xs text-[#737373]'>Lore imp sum dolor Amit</h1>
-                </div>
-
-
-            </div>
-
-            {/* made by */}
-            <div className='bg-[#fafafa]  col-span-1 min-[580px]:col-span-2 md:col-span-3 lg:col-span-4 xl:col-span-5 row-span-2 flex justify-start px-[10%] items-center flex-wrap'>
-                <h1 className='font-montserrat text-sm text-[#737373]  font-bold'>Made With Love By Finland All Right Reserved </h1>
-
-            </div>    
+<footer className="bg-white rounded-lg shadow  m-4">
+    <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8 ">
+        <div className="sm:flex sm:items-center sm:justify-between">
+            <a href="" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+            <span className="self-center text-2xl font-bold whitespace-nowrap text-logo">BANDAGE</span>
+            </a>
+            <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400 space-x-4">
+                <li>
+                    <a href="" className="hover:underline me-4 md:me-6">
+                    <Image
+                    aria-hidden
+                    src={fb}
+                    alt="facebook"
+                    />
+                    </a>
+                </li>
+                <li>
+                    <a href="#" className="hover:underline me-4 md:me-6">
+                    <Image
+                    aria-hidden
+                    src={insta}
+                    alt="instagram"
+                    />
+                    </a>
+                </li>
+                <li>
+                    <a href="#" className="hover:underline me-4 md:me-6">
+                    <Image
+                    aria-hidden
+                    src={twitter}
+                    alt="twitter"
+                    />
+                    </a>
+                </li>
+            </ul>
         </div>
-    )
+    </div>
+    <div className="mx-auto w-full max-w-screen-xl">
+      <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-5">
+        <div>
+            <h2 className="mb-6 font-semibold text-gray-900 text-md">Company Info</h2>
+            <ul className=" text-[#737373] font-medium text-sm">
+                <li className="mb-4">
+                    <a href="#" className=" hover:underline">About Us</a>
+                </li>
+                <li className="mb-4">
+                    <a href="#" className="hover:underline">Career</a>
+                </li>
+                <li className="mb-4">
+                    <a href="#" className="hover:underline">We are hiring</a>
+                </li>
+                <li className="mb-4">
+                    <a href="#" className="hover:underline">Blog</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2 className="mb-6 font-semibold text-gray-900 text-md">Legal</h2>
+            <ul className=" text-[#737373] font-medium text-sm">
+                <li className="mb-4">
+                    <a href="#" className=" hover:underline">About Us</a>
+                </li>
+                <li className="mb-4">
+                    <a href="#" className="hover:underline">Career</a>
+                </li>
+                <li className="mb-4">
+                    <a href="#" className="hover:underline">We are hiring</a>
+                </li>
+                <li className="mb-4">
+                    <a href="#" className="hover:underline">Blog</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2 className="mb-6 font-semibold text-gray-900 text-md">Features</h2>
+            <ul className=" text-[#737373] font-medium text-sm">
+                <li className="mb-4">
+                    <a href="#" className=" hover:underline">Business Marketing</a>
+                </li>
+                <li className="mb-4">
+                    <a href="#" className="hover:underline">User Analytic</a>
+                </li>
+                <li className="mb-4">
+                    <a href="#" className="hover:underline">Live Chat</a>
+                </li>
+                <li className="mb-4">
+                    <a href="#" className="hover:underline">Unlimited Support</a>
+                </li>
+            </ul>
+        </div>
+     
+        <div>
+            <h2 className="mb-6 font-semibold text-gray-900 text-md">Resources</h2>
+            <ul className=" text-[#737373] font-medium text-sm">
+                <li className="mb-4">
+                    <a href="#" className=" hover:underline">IOS & Android</a>
+                </li>
+                <li className="mb-4">
+                    <a href="#" className="hover:underline">Watch a Demo</a>
+                </li>
+                <li className="mb-4">
+                    <a href="#" className="hover:underline">Customers</a>
+                </li>
+                <li className="mb-4">
+                    <a href="#" className="hover:underline">API</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2 className="mb-6 font-semibold text-gray-900 text-md">Get In Touch</h2>
+            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+            <div className="flex items-center space-x-2">
+            <input 
+                type="text" 
+                name="" 
+                id="" 
+                placeholder="Your Email" 
+                className="border-0 p-2 rounded-l-md w-44" 
+            />
+            <button className="bg-[#23A6F0] text-white px-6 py-4 rounded-r-md">
+                Subscribe
+            </button>
+            </div>
+
+            </ul>
+        </div>
+    </div>
+    <div className="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
+        <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">Made With Love By Finland All Right Reserved 
+        </span>
+      
+      </div>
+    </div>
+</footer>
+
+
+    </div>
+  )
 }
+
+export default Footer
