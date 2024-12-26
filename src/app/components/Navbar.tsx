@@ -55,16 +55,16 @@ const Navbar = () => {
           </svg>
       </li>
       <li>
-        <a href="#" className="block py-2 px-3 text-gray-900 rounded">About</a>
+        <a href="/about" className="block py-2 px-3 text-gray-900 rounded">About</a>
       </li>
       <li>
-        <a href="#" className="block py-2 px-3 text-gray-900 rounded">Blog</a>
+        <a href="/about" className="block py-2 px-3 text-gray-900 rounded">Blog</a>
       </li>
       <li>
-        <a href="#" className="block py-2 px-3 text-gray-900 rounded">Contact</a>
+        <a href="/contact" className="block py-2 px-3 text-gray-900 rounded">Contact</a>
       </li>
       <li>
-        <a href="#" className="block py-2 px-3 text-gray-900 rounded">Pages</a>
+        <a href="/contact" className="block py-2 px-3 text-gray-900 rounded">Pages</a>
       </li>
     </ul>
 
