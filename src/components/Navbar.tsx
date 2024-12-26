@@ -1,192 +1,118 @@
-"use client"
-import Image from 'next/image'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+'use client';
+import React, { useState } from 'react';
+import Image from 'next/image';
+import profile from '../assets/profile.svg';
+import search from '../assets/search.svg';
+import cart from '../assets/cart.svg';
+import heart from '../assets/heart.svg';
+import Link from 'next/link';
 
-import {
-    Sheet,
-    SheetContent,
-    SheetTrigger,
-} from "@/components/ui/sheet"
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-import {
-    Accordion,
-    AccordionItem,
-    AccordionTrigger,
-} from "@/components/ui/accordion"
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
+  return (
+    <div>
+      <nav className="bg-white border-gray-200 z-50">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+  {/* Logo */}
+  <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
+    <span className="self-center text-2xl font-bold whitespace-nowrap text-logo">BANDAGE</span>
+  </a>
 
+  {/* Hamburger Menu */}
+  <button
+    onClick={toggleMenu}
+    type="button"
+    className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400"
+    aria-controls="navbar-multi-level"
+    aria-expanded={isOpen ? 'true' : 'false'}
+  >
+    <span className="sr-only">Open main menu</span>
+    <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+      <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
+    </svg>
+  </button>
 
-export default function Navbar() {
+  {/* Navbar Links */}
+  <div
+    className={`${isOpen ? 'block' : 'hidden'} w-full md:block md:w-auto`}
+    id="navbar-multi-level"
+  >
+    <ul className="flex flex-col text-center font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-white text-black text-sm">
+      <li className="block py-2 px-3 rounded md:bg-transparent" aria-current="page">
+        <Link href='/'>Home</Link>
+      </li>
+      <li className="py-2 px-3 rounded md:bg-transparent flex justify-center" aria-current="page">
+        <Link href='/shop'>
+          Shop{' '}
+          </Link>
+          <svg className="w-2.5 h-2.5 ms-2.5 mt-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
+          </svg>
+      </li>
+      <li>
+        <a href="/about" className="block py-2 px-3 text-gray-900 rounded">About</a>
+      </li>
+      <li>
+        <a href="/about" className="block py-2 px-3 text-gray-900 rounded">Blog</a>
+      </li>
+      <li>
+        <a href="/contact" className="block py-2 px-3 text-gray-900 rounded">Contact</a>
+      </li>
+      <li>
+        <a href="/contact" className="block py-2 px-3 text-gray-900 rounded">Pages</a>
+      </li>
+    </ul>
 
-    const pathname = usePathname()
-    let conditional = true
-    if(pathname =="/about" ||  pathname =="/pricing" || pathname =="/team" || pathname == "/contact"){
-        conditional = false
-        
-    }
+    {/* Icons for Mobile View */}
+    {isOpen && (
+      <div className="flex flex-col items-center space-y-3 md:hidden mt-4">
+        <div className="profile flex items-center space-x-1">
+          <Image aria-hidden src={profile} alt="profile icon" />
+          <h1 className="text-[#23A6F0] text-xs font-semibold">Login / Register</h1>
+        </div>
+        <div className="flex space-x-1">
+          <Image aria-hidden src={search} alt="search icon" />
+        </div>
+        <div className="flex items-center space-x-1">
+          <Image aria-hidden src={cart} alt="cart icon" />
+          <h1 className="text-[#23A6F0] text-xs font-semibold">1</h1>
+        </div>
+        <div className="flex items-center space-x-1">
+          <Image aria-hidden src={heart} alt="heart icon" />
+          <h1 className="text-[#23A6F0] text-xs font-semibold">1</h1>
+        </div>
+      </div>
+    )}
+  </div>
 
-    return (
-        <div className='text-white flex justify-center items-center flex-col w-screen overflow-x-hidden'>
+  {/* Icons for Desktop View */}
+  <div className="hidden md:flex items-center space-x-3">
+    <div className="profile flex items-center space-x-1">
+      <Image aria-hidden src={profile} alt="profile icon" />
+      <h1 className="text-[#23A6F0] text-xs font-semibold">Login / Register</h1>
+    </div>
+    <div className="profile flex space-x-1">
+      <Image aria-hidden src={search} alt="search icon" />
+    </div>
+    <div className="search flex items-center space-x-1">
+      <Image aria-hidden src={cart} alt="cart icon" />
+      <h1 className="text-[#23A6F0] text-xs font-semibold">1</h1>
+    </div>
+    <div className="profile flex items-center space-x-1">
+      <Image aria-hidden src={heart} alt="heart icon" />
+      <h1 className="text-[#23A6F0] text-xs font-semibold">1</h1>
+    </div>
+  </div>
+</div>
 
-           
-            {
+      </nav>
+    </div>
+  );
+};
 
-                conditional ?
-                    <>
-                        <div className=' w-full hidden lg:flex lg:px-5 justify-between  items-center relative bg-black h-12  text-center'>
-
-                             {/* Primary part */}
-
-                            {/* contact and mail */}
-                            <div className={`text-sm flex justify-center items-center gap-8 font-montserrat`}>
-
-                                {/* contact */}
-                                <div className='flex justify-center items-center gap-1'>
-                                    <Image src={"/images/navbar/telephone-small.png"} alt='telephone' height={15} width={15} />
-                                    <p>(225) 555-0118</p>
-                                </div>
-
-                                {/*mail  */}
-                                <div className='flex justify-center items-center gap-1'>
-                                    <Image src={"/images/navbar/mail-small.png"} alt='mail' height={15} width={15} />
-                                    <p>michelle.rivera@example.com</p>
-                                </div>
-                            </div>
-
-                            <h1 className='font-montserrat w-[312px] font-bold text-sm'>Follow Us  and get a chance to win 80% off</h1>
-
-                            {/* socials  */}
-                            <div className='flex justify-center items-center '>
-
-                                <p className='text-sm font-montserrat font-bold'>Follow Us :</p>
-
-                                <div className='flex justify-center items-center gap-1 w-[120px]'>
-                                    <Image src={"/images/navbar/i.png"} alt='insta' height={20} width={20} />
-                                    <Image src={"/images/navbar/y.png"} alt='insta' height={20} width={20} />
-                                    <Image src={"/images/navbar/f.png"} alt='insta' height={20} width={20} />
-                                    <Image src={"/images/navbar/t.png"} alt='insta' height={20} width={20} />
-                                </div>
-
-                            </div>
-
-
-                        </div>
-                        <div className='flex justify-evenly items-center w-full border-b h-24 '>
-
-                            {/* Secondary Part */}
-                            <Link href={"/"}><h1 className='font-montserrat text-black text-2xl font-bold'>Bandage</h1></Link>
-
-                            <div className='hidden lg:flex font-montserrat text-sm font-bold text-[#737373] justify-center items-center gap-4'>
-                                <Link href={'/'} className='text-lg'> Home</Link>
-                                   <Link href={"/shop"}> <Accordion type="single" collapsible className='relative'>
-                                    <AccordionItem value="item-1" >
-                                        <AccordionTrigger className='font-montserrat font-bold text-base z-50'>shop</AccordionTrigger>
-                                        
-                                    </AccordionItem>
-                                </Accordion>
-                                </Link>
-                                <Link href={"/about"} className='text-lg'> About</Link>
-                                <Link href={"/about"} className='text-lg'> Blog</Link>
-                                <Link href={'/contact'} className='text-lg'> Contact</Link>
-                                <Link href={"/contact"} className='text-lg'> Pages</Link>
-                            </div>
-
-                            <div className='relative flex justify-center items-center gap-8 '>
-
-                                <div className='flex justify-center items-center'>
-
-                                    <div className='hidden w-[166px] font-montserrat text-sm lg:flex justify-center items-center gap-1'>
-                                        <Image src={"/images/navbar/user.svg"} alt='search' height={15} width={15} />
-                                        <p className='text-[#23A6F0] font-bold'>Login</p>
-                                        /
-                                        <p className='text-[#23A6F0] font-bold'>Register</p>
-                                    </div>
-
-                                    <div className='flex justify-between items-center gap-5'>
-                                        <Image src={"/images/navbar/search.svg"} alt='search' height={20} width={20} className={"cursor-pointer"} />
-
-                                        <Image src={"/images/navbar/cart.svg"} alt='search' height={20} width={20} className={"cursor-pointer text-black lg:text-[#23A6F0]"} />
-
-                                        <Image src={"/images/navbar/heart.svg"} alt='search' height={20} width={20} className={"cursor-pointer hidden lg:block"} />
-
-                                    </div>
-
-                                </div>
-
-
-
-                                <Sheet>
-                                    <SheetTrigger>
-                                        <Image src={"/images/navbar/menu.svg"} alt='hamburger' height={20} width={20} className='block lg:hidden' />
-                                    </SheetTrigger>
-                                    <SheetContent className='absolute top-24 w-screen bg-white h-screen flex flex-col justify-center items-center text-[#737373]'>
-
-
-                                        <Link href="/" className='font-semibold text-3xl mb-8 '>Home</Link>
-                                        <Link href="/contact" className='font-semibold text-3xl mb-8 '>Contact</Link>
-                                        <Link href="/about" className='font-semibold text-3xl mb-8 '>About</Link>
-                                        
-                                        
-
-
-
-                                    </SheetContent>
-                                </Sheet>
-
-                            </div>
-
-                        </div>
-                    </> :
-                    <div className='flex justify-evenly items-center w-full border-b h-24 '>
-                        {/* Secondary part when condition applies */}
-                       <Link href={"/"}> <h1 className='font-montserrat text-black text-2xl font-bold'>Bandage</h1></Link>
-
-                        <div className='hidden lg:flex font-montserrat text-sm font-bold text-[#737373] justify-center items-center gap-8'>
-                            <Link href={'/'} className='text-lg'> Home</Link>
-                            <Link href={"/shop"} className='text-lg'> Product</Link>
-                            <Link href={"/pricing"} className='text-lg'> Pricing</Link>
-                            <Link href={'/contact'} className='text-lg'> Contact</Link>
-
-                        </div>
-
-                        <div className='relative flex justify-center items-center gap-8 '>
-
-                            <div className='hidden lg:flex justify-center items-center'>
-                                {/* login and membership button */}
-
-                                <p className='text-[#23A6F0] font-montserrat text-sm font-bold mr-8'>Login</p>
-                                <button className='flex justify-center items-center gap-2 font-montserrat w-[214px] h-[52px] bg-[#23A6F0] text-white text-sm font-bold rounded-sm'>Become a memeber
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="15px" viewBox="0 -960 960 960" width="15px" fill="#ffffff"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" /></svg>
-                                </button>
-
-                            </div>
-
-                            <Image src={"/images/navbar/search.svg"} alt='search' height={20} width={20} className={"cursor-pointer lg:hidden"} />
-
-                            <Image src={"/images/navbar/cart.svg"} alt='search' height={20} width={20} className={"cursor-pointer lg:hidden text-black lg:text-[#23A6F0]"} />
-
-                            <Sheet>
-                                <SheetTrigger>
-                                    <Image src={"/images/navbar/menu.svg"} alt='hamburger' height={20} width={20} className='block lg:hidden' />
-                                </SheetTrigger>
-                                <SheetContent className='absolute top-24 w-screen bg-white h-screen flex flex-col justify-center items-center text-[#737373]'>
-
-
-                                    <Link href="/" className='font-semibold text-3xl mb-8 '>Home</Link>
-                                    <Link href="/contact" className='font-semibold text-3xl mb-8 '>Contact</Link>
-                                    <Link href="/about" className='font-semibold text-3xl mb-8 '>About</Link>
-                                    
-
-
-
-                                </SheetContent>
-                            </Sheet>
-
-                        </div>
-
-                    </div>
-            }
-        </div >
-    )
-}
+export default Navbar;
