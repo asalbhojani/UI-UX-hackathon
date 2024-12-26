@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductlistingConditional from "@/components/productlistingConditional";
 
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
+        <Header/>
         <Navbar />
         {children}
         <Footer />
