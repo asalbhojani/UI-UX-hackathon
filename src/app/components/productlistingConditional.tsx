@@ -1,7 +1,7 @@
 "use client"
 
 import { usePathname } from "next/navigation"
-import ProductCard from '@/components/ProductCard'
+import ProductCard from './ProductCard'
 
 import {
     Pagination,
@@ -10,7 +10,7 @@ import {
     PaginationLink,
     PaginationNext,
     PaginationPrevious,
-} from "@/components/ui/pagination"
+} from "./ui/pagination"
 
 export default function ProductlistingConditional() {
     const path = usePathname()
